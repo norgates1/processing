@@ -34,16 +34,16 @@ boolean w, s, a, d;  //Variablen der Richtungstasten deklarieren
 void setup() {
   size(1200, 600);
   auto = new Auto(50, 50, 0, 0);  //neues Objekt vom Typ Auto erzeugen mit Angabe der Position und des Tempos
-  frameRate(120);
+  frameRate(240);
 
    
 }
 
 void draw() {
-  if (w)  auto.ytempo -= 0.8; //Wenn w zutrifft, dann yDir von y subtrahieren (nach oben bewegen)
-  if (s)  auto.ytempo += 0.8; //Wenn s zutrifft, dann yDir zu y addieren (nach unten bewegen)
-  if (a)  auto.xtempo -= 0.8; //Wenn a zutrifft, dann xDir von x subtrahieren (nach links bewegen)
-  if (d)  auto.xtempo += 0.8; //Wenn d zutrifft, dann xDir zu x addieren (nach rechts bewegen)
+  if (w)  auto.ytempo -= 0.6; //Wenn w zutrifft, dann yDir von y subtrahieren (nach oben bewegen)
+  if (s)  auto.ytempo += 0.6; //Wenn s zutrifft, dann yDir zu y addieren (nach unten bewegen)
+  if (a)  auto.xtempo -= 0.6; //Wenn a zutrifft, dann xDir von x subtrahieren (nach links bewegen)
+  if (d)  auto.xtempo += 0.6; //Wenn d zutrifft, dann xDir zu x addieren (nach rechts bewegen)
 
   background(0);
   auto.fahren();               //dem Objekt die Klassenmethode "Fahren" zuweisen
