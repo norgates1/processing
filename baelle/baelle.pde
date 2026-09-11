@@ -3,6 +3,7 @@
 // AW 7.6.2007
 Ball[] baelle;
 int ballzahl = 10;
+Rechteck rechteck;
 
 void setup() {
         // display settings
@@ -14,10 +15,13 @@ void setup() {
 
     baelle = new Ball[ballzahl];
 
+
         // erzeuge neuen Ball an Position 100,100 mit Zufallstempo
     for (int i = 0; i < ballzahl; i++) {
         baelle[i] = new Ball(100, 100, random(-1,1), random(-1,1));
     }
+
+    rechteck = new Rechteck(100, 100, random(-1,1), random(-1,1));
     
 }
 
@@ -26,6 +30,9 @@ void draw() {
     for (int i = 0; i < ballzahl; i++) {
         baelle[i].bounce(); 
     }
+    rechteck.bounce();
+
+    
 
 }
 //---------------------------------------------------------
@@ -38,7 +45,7 @@ float ypos;
 	Ball(float x,  float y, float xt, float yt) { 
         // Konstruktor, überträgt die Parameter auf das neu erzeugte Objekt
 		xpos=x;
-                ypos=y;
+        ypos=y;
 		xtempo=xt;
 		ytempo=yt;
 	}
@@ -57,3 +64,13 @@ float ypos;
            ellipse(xpos, ypos, 40, 40); 
         }
 }// Ende Ball
+
+class Rechteck extends Ball {
+    Rechteck(float x,  float y, float xt, float yt) {
+        super(x, y, xt, yt);
+    }
+
+    void render() {
+        rect(xpos, ypos, 40, 40);
+    }
+}
